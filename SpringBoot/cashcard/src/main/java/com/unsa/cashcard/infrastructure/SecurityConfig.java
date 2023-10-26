@@ -20,7 +20,7 @@ public class SecurityConfig {
         httpSecurity
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/cashcards/**")
-                        .authenticated())
+                        .hasRole("CARD-OWNER")) // Enable RBAC: Replace .authenticated()
                 .csrf(csrf -> csrf.disable())
                 .httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
@@ -37,7 +37,7 @@ public class SecurityConfig {
         UserDetails sarah = users
                 .username("sarah1")
                 .password(passwordEncoder.encode("abc123"))
-                .roles()
+                .roles("CARD-OWNER")
                 .build();
         UserDetails hankOwnsNoCards = users
                 .username("hank-owns-no-cards")
