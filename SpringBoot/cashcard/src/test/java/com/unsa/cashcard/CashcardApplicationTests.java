@@ -3,6 +3,7 @@ package com.unsa.cashcard;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 
+import com.unsa.cashcard.domain.CashCard;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,13 @@ class CashcardApplicationTests {
 		ResponseEntity<String> response = restTemplate.getForEntity("/cashcards/1000", String.class);
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
 		assertThat(response.getBody()).isBlank();
+	}
+
+	@Test
+	void shouldCreateANewCashCard() {
+		CashCard newCashCard = new CashCard(null, 250.00);
+		ResponseEntity<Void> createResponse = restTemplate.postForEntity("/cashcards", newCashCard, Void.class);
+		assertThat(createResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
 	}
 
 }
