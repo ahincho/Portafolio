@@ -31,7 +31,7 @@ public class CashCardJsonTest {
     void setUp() {
         cashCards = Arrays.array(
                 new CashCard(99L, 123.45),
-                new CashCard(100L, 100.00),
+                new CashCard(100L, 1.00),
                 new CashCard(101L, 150.00)
         );
     }
