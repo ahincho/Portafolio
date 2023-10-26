@@ -39,7 +39,7 @@ public class CashCardJsonTest {
     @Test
     public void cashCardSerializationTest() throws IOException {
         CashCard cashCard = new CashCard(99L, 123.45);
-        assertThat(json.write(cashCard)).isStrictlyEqualToJson(new ClassPathResource("expected.json"));
+        assertThat(json.write(cashCard)).isStrictlyEqualToJson(new ClassPathResource("example/cashcard/expected.json"));
         assertThat(json.write(cashCard)).hasJsonPathNumberValue("@.id");
         assertThat(json.write(cashCard)).extractingJsonPathNumberValue("@.id").isEqualTo(99);
         assertThat(json.write(cashCard)).hasJsonPathNumberValue("@.amount");
@@ -61,7 +61,7 @@ public class CashCardJsonTest {
 
     @Test
     void cashCardListSerializationTest() throws IOException {
-        assertThat(jsonList.write(cashCards)).isStrictlyEqualToJson(new ClassPathResource("list.json"));
+        assertThat(jsonList.write(cashCards)).isStrictlyEqualToJson(new ClassPathResource("example/cashcard/list.json"));
     }
 
     @Test
