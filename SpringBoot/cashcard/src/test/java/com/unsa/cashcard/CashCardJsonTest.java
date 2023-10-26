@@ -64,4 +64,16 @@ public class CashCardJsonTest {
         assertThat(jsonList.write(cashCards)).isStrictlyEqualToJson(new ClassPathResource("list.json"));
     }
 
+    @Test
+    void cashCardListDeserializationTest() throws IOException {
+        String expected = """
+         [
+            { "id": 99, "amount": 123.45 },
+            { "id": 100, "amount": 1.00 },
+            { "id": 101, "amount": 150.00 }
+         ]
+         """;
+        assertThat(jsonList.parse(expected)).isEqualTo(cashCards);
+    }
+
 }
