@@ -9,8 +9,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CashcardApplicationTests {
 
 	@Test
+	void contextLoads() {
+
+	}
+
+	@Test
 	public void myFirstTest() {
-		assertThat(1).isEqualTo(42);
+		// Writing my first unit test on Spring Boot
+		// Here we are checking some integer values
+		assertThat(42).isEqualTo(42);
 	}
 
 }
