@@ -71,6 +71,7 @@ public class CashCardController {
 
     @DeleteMapping("/{id}")
     private ResponseEntity<Void> deleteCashCard(@PathVariable Long id) {
+        cashCardRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 
