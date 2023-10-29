@@ -9,3 +9,7 @@ https://kotlinlang.org/docs/home.html
 ### b. Free Google Course to Learn Kotlin
 
 https://learn.udacity.com/courses/ud9011
+
+### c. Android Announces Support for Kotlin (Official Language)
+
+https://android-developers.googleblog.com/2017/05/android-announces-support-for-kotlin.html
