@@ -5,3 +5,7 @@
 ### a. Kotlin Basics and Official Documentation
 
 https://kotlinlang.org/docs/home.html
+
+### b. Free Google Course to Learn Kotlin
+
+https://learn.udacity.com/courses/ud9011
