@@ -77,5 +77,34 @@ fun main() {
     while (myCounter < myList.count()) {
         println(myList[myCounter])
         myCounter++
+        myFunction()
     }
+    // 9. Optionals
+    var myOptional : String? = null
+    println(myOptional)
+    myOptional = "Angel"
+    println(myOptional)
+    // 10. Functions
+    myFunction()
+    myFunction()
+    myFunction()
+    // 11. Classes
+    var client = Person("Angel", 19)
+    println("Creationg somes classes")
+    println(client.name)
+    client.gretting()
+}
+
+// Functions
+fun myFunction() {
+    println("This is a function")
+}
+
+// Classes
+class Person(val name : String, val age : Int) {
+
+    fun gretting() {
+        println("Hello Person!")
+    }
+
 }
