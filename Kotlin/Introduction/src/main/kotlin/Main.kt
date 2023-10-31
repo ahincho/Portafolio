@@ -45,4 +45,37 @@ fun main() {
     } else {
         println("Integer Value isn't 12")
     }
+    // 5. Lists
+    // Immutable List
+    var myList = listOf<String>("Angel", "Hincho", "ahincho")
+    println(myList)
+    // Mutable List
+    val otherList = mutableListOf<String>("Angel", "Hincho", "ahincho")
+    println(otherList)
+    otherList.add(1,"Eduardo")
+    println(otherList)
+    // 6. Sets
+    val mySet = setOf<String>("Angel", "ahincho", "Hincho", "ahincho")
+    println(mySet)
+    // 7. Maps
+    val myMap = mutableMapOf("Angel" to 19, "Fabiola" to 27, "Darwin" to 21)
+    println(myMap["Fabiola"])
+    println(myMap["Angel"])
+    println(myMap["Darwin"])
+    myMap["Samir"] = 20
+    println(myMap["Samir"])
+    // 8. Loops
+    // For Loop
+    for (value in myList) {
+        println(value)
+    }
+    for (maplet in myMap) {
+        println(maplet)
+    }
+    var myCounter = 0
+    // While Loop
+    while (myCounter < myList.count()) {
+        println(myList[myCounter])
+        myCounter++
+    }
 }
