@@ -2,7 +2,7 @@
 
 ## 1. Interesting Resources and Literature
 
-### a. Kotlin for Beginners by MoureDev (In progress)
+### a. Kotlin for Beginners by MoureDev (Done)
 
 https://youtu.be/T3ugOYTRF7c
 
