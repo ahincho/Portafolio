@@ -21,3 +21,4 @@ https://android-developers.googleblog.com/2017/05/android-announces-support-for-
 ### e. Android + Kotlin Review by AristiDev
 
 https://www.youtube.com/playlist?list=PL8ie04dqq7_OcBYDpvHrcSFVoggLi3cm_
+https://github.com/ArisGuimera/Android-Expert
