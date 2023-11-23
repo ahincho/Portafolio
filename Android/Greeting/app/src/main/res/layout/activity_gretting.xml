@@ -1,61 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".GreetingActivity">
     <View
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_gravity="start|top"
-        android:background="@color/teal_200">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/material_dynamic_neutral0">
     </View>
     <View
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_gravity="center|top"
-        android:background="@color/teal_200">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="@color/material_dynamic_neutral20">
     </View>
     <View
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_gravity="top|end"
-        android:background="@color/teal_200">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@color/material_dynamic_neutral40">
     </View>
     <View
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_gravity="start|center"
-        android:background="@color/teal_200">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="@color/material_dynamic_neutral60">
     </View>
     <View
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_gravity="center"
-        android:background="@color/teal_200">
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:background="@color/material_dynamic_neutral80">
     </View>
-    <View
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:background="@color/teal_200"
-        android:layout_gravity="center|end">
-    </View>
-    <View
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:background="@color/teal_200"
-        android:layout_gravity="bottom|start">
-    </View>
-    <View
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:background="@color/teal_200"
-        android:layout_gravity="bottom|center">
-    </View>
-    <View
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:background="@color/teal_200"
-        android:layout_gravity="bottom|end">
-    </View>
-</FrameLayout>
+</LinearLayout>
