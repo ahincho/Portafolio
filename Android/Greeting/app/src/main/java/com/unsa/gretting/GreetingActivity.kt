@@ -1,5 +1,6 @@
 package com.unsa.gretting
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
@@ -16,6 +17,9 @@ class GreetingActivity : AppCompatActivity() {
             val name = etName.text.toString()
             if (name.isNotEmpty()) {
                 Log.i("Angel", "Button Pressed: ${name}")
+                val intent : Intent = Intent(this, HelloActivity::class.java)
+                intent.putExtra("USER_NAME", name)
+                startActivity(intent)
             }
         }
     }
