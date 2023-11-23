@@ -11,58 +11,98 @@
         android:layout_weight="1"
         android:background="@color/material_dynamic_neutral0">
     </View>
-    <View
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:background="@color/material_dynamic_neutral20">
-    </View>
-    <View
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:background="@color/material_dynamic_neutral40">
-    </View>
-    <View
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="4"
-        android:background="@color/material_dynamic_neutral60">
-    </View>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="5"
+        android:layout_weight="1"
         android:orientation="vertical">
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/material_dynamic_neutral0">
-        </View>
+            android:background="@color/material_dynamic_neutral100"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            android:background="@color/material_dynamic_neutral20">
-        </View>
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral80"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
-            android:background="@color/material_dynamic_neutral40">
-        </View>
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral60"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
-            android:background="@color/material_dynamic_neutral60">
-        </View>
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral40"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5"
-            android:background="@color/material_dynamic_neutral80">
-        </View>
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral20"/>
+    </LinearLayout>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/material_dynamic_neutral40">
+    </View>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral100"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral80"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral60"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral40"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/material_dynamic_neutral100"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/material_dynamic_neutral80"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/material_dynamic_neutral60"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/material_dynamic_neutral40"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/material_dynamic_neutral20"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
