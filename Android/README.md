@@ -11,3 +11,7 @@ Source Code: https://github.com/android/nowinandroid
 
 Video: https://www.youtube.com/playlist?list=PL8ie04dqq7_OcBYDpvHrcSFVoggLi3cm_
 Source Code: https://github.com/ArisGuimera/Android-Expert
+
+### c. Android Layouts by AristiDev
+
+Video: https://www.youtube.com/playlist?list=PL8ie04dqq7_MGB5vNieT4Fr_fvw5t0nBC
