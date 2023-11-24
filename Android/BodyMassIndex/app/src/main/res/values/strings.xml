@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
     <string name="bmi_calculator">BMI Calculator</string>
+    <string name="male">Male</string>
+    <string name="male_icon_mage">Male Icon mage</string>
+    <string name="female">Female</string>
+    <string name="female_icon_mage">Female Icon mage</string>
+    <string name="height">Height</string>
+    <string name="recorded_height">100cm</string>
 </resources>
