@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import android.os.Bundle
+import android.content.Intent
+import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
@@ -12,6 +14,7 @@ import java.text.DecimalFormat
 class CalculatorActivity : AppCompatActivity() {
     private var isMaleSelected : Boolean = true
     private var isFemaleSelected : Boolean = false
+    private var currentHeight : Int = 100
     private var currentWeight : Int = 50
     private var currentAge : Int = 20
     private lateinit var cardMale : CardView
@@ -24,6 +27,10 @@ class CalculatorActivity : AppCompatActivity() {
     private lateinit var btnSubtractAge : FloatingActionButton
     private lateinit var btnAddAge : FloatingActionButton
     private lateinit var tvAge : TextView
+    private lateinit var btnCalculate : Button
+    companion object {
+        const val IMC_RESULT = "IMC_RESULT"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
@@ -42,6 +49,7 @@ class CalculatorActivity : AppCompatActivity() {
         btnSubtractAge = findViewById(R.id.btnSubtractAge)
         btnAddAge = findViewById(R.id.btnAddAge)
         tvAge = findViewById(R.id.tvAge)
+        btnCalculate = findViewById(R.id.btnCalculate)
     }
     private fun initListeners() {
         cardMale.setOnClickListener {
@@ -54,8 +62,8 @@ class CalculatorActivity : AppCompatActivity() {
         }
         rsHeight.addOnChangeListener { _, value, _ ->
             val df = DecimalFormat("#.##")
-            val res = df.format(value)
-            "${res}cm".also { tvHeight.text = it }
+            currentHeight = df.format(value).toInt()
+            "${currentHeight}cm".also { tvHeight.text = it }
         }
         btnSubtractWeight.setOnClickListener {
             currentWeight -= 1
@@ -72,6 +80,10 @@ class CalculatorActivity : AppCompatActivity() {
         btnAddAge.setOnClickListener {
             currentAge += 1
             updateAge()
+        }
+        btnCalculate.setOnClickListener {
+            val result = calculateBmi()
+            navigateToResult(result)
         }
     }
     private fun initUserInterface() {
@@ -100,5 +112,16 @@ class CalculatorActivity : AppCompatActivity() {
     }
     private fun updateAge() {
         "${this.currentAge} years".also { tvAge.text = it }
+    }
+    private fun calculateBmi() : Double {
+        val df = DecimalFormat("#.##")
+        val heightInMeters = currentHeight / 100.0
+        val bmi = (currentWeight / (heightInMeters * heightInMeters))
+        return df.format(bmi).toDouble()
+    }
+    private fun navigateToResult(result : Double) {
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra(IMC_RESULT, result)
+        startActivity(intent)
     }
 }

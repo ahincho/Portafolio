@@ -15,4 +15,5 @@
     <string name="recorded_age">20 years</string>
     <string name="subtract_age">Subtract Age</string>
     <string name="add_age">Add Age</string>
+    <string name="calculate_bmi">Calculate BMI</string>
 </resources>

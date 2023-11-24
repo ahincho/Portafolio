@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="32dp"
+    android:paddingVertical="16dp"
     android:paddingHorizontal="16dp"
     android:background="@color/background_app"
     tools:context=".CalculatorActivity">
@@ -124,7 +124,7 @@
         android:layout_marginEnd="8dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintTop_toBottomOf="@+id/viewHeight"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalculate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/viewAge"
         app:cardBackgroundColor="@color/background_component">
@@ -190,7 +190,7 @@
         app:cardCornerRadius="16dp"
         app:cardBackgroundColor="@color/background_component"
         app:layout_constraintTop_toBottomOf="@id/viewHeight"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalculate"
         app:layout_constraintStart_toEndOf="@+id/viewWeight"
         app:layout_constraintEnd_toEndOf="parent">
         <LinearLayout
@@ -247,4 +247,16 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@id/viewWeight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="@string/calculate_bmi">
+    </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
