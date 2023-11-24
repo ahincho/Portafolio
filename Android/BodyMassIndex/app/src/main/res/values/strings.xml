@@ -16,4 +16,15 @@
     <string name="subtract_age">Subtract Age</string>
     <string name="add_age">Add Age</string>
     <string name="calculate_bmi">Calculate BMI</string>
+    <string name="bmi_result">BMI Result</string>
+    <string name="back_to_bmi_calculator">Back to BMI Calculator</string>
+    <string name="error">Internal Error</string>
+    <string name="low_weight_category">Low Weight</string>
+    <string name="normal_weight_category">Normal Weight</string>
+    <string name="over_weight_category">Over Weight</string>
+    <string name="obesity_weight_category">Obesity</string>
+    <string name="low_weight_description">You are underweight for your height</string>
+    <string name="normal_weight_description">You have a normal weight for your height</string>
+    <string name="over_weight_description">You are overweight for your height</string>
+    <string name="obesity_weight_description">You are obese considering your height</string>
 </resources>
