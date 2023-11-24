@@ -7,4 +7,12 @@
     <string name="female_icon_mage">Female Icon mage</string>
     <string name="height">Height</string>
     <string name="recorded_height">100cm</string>
+    <string name="weight">Weight</string>
+    <string name="recorded_weight">50kg</string>
+    <string name="subtract_weight">Subtract Weight</string>
+    <string name="add_weight">Add Weight</string>
+    <string name="age">Age</string>
+    <string name="recorded_age">20 years</string>
+    <string name="subtract_age">Subtract Age</string>
+    <string name="add_age">Add Age</string>
 </resources>
