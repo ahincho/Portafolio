@@ -1,4 +1,8 @@
 package com.unsa.heroes
 
-class SuperHero {
-}
+data class SuperHero (
+    val alias : String,
+    val name : String,
+    val publisher : String,
+    val photo : String
+)
