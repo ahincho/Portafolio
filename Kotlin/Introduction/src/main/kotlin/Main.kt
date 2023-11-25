@@ -90,7 +90,7 @@ fun main() {
     myFunction()
     // 11. Classes
     var client = Person("Angel", 19)
-    println("Creationg somes classes")
+    println("Creating somes classes and objects")
     println(client.name)
     client.gretting()
 }
