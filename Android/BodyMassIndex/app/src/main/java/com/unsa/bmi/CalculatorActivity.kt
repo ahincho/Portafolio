@@ -108,7 +108,7 @@ class CalculatorActivity : AppCompatActivity() {
         isFemaleSelected = !isFemaleSelected
     }
     private fun updateWeight() {
-        tvWeight.text = currentWeight.toString()
+        "${currentWeight} kg".also { tvWeight.text = it }
     }
     private fun updateAge() {
         "${this.currentAge} years".also { tvAge.text = it }
