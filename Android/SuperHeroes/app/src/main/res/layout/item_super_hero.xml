@@ -37,6 +37,17 @@
             app:layout_constraintStart_toEndOf="@id/ivSuperHeroImage"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="Super Hero Name"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/delete_super_hero"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/delete"
+            android:backgroundTint="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivSuperHeroImage"
+            app:layout_constraintTop_toBottomOf="@id/tvSuperHeroName" />
         <TextView
             android:id="@+id/tvSuperHeroPublisher"
             android:layout_width="wrap_content"

@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Super Heroes</string>
     <string name="super_hero_image">Super Hero Image</string>
+    <string name="delete_super_hero">Delete Super Hero</string>
+    <string name="delete">Delete</string>
 </resources>
