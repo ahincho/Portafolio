@@ -22,14 +22,12 @@ class ListActivity : AppCompatActivity() {
         initRecyclerView()
     }
     private fun initRecyclerView() {
-        val decoration = DividerItemDecoration(this, manager.orientation)
         adapter = ApplicantAdapter (
             applicants = applicants,
             deleteListener = { position -> onApplicantDelete(position) }
         )
         binding.rvApplicants.layoutManager = manager
         binding.rvApplicants.adapter = adapter
-        binding.rvApplicants.addItemDecoration(decoration)
     }
     private fun onApplicantDelete(position: Int) {
         applicants.removeAt(position)
