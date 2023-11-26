@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Applicants</string>
+    <string name="write_your_username">Write your username</string>
+    <string name="write_your_password">Write your password</string>
+    <string name="login_image">Login Image</string>
+    <string name="login">Login</string>
 </resources>
