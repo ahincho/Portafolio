@@ -7,4 +7,5 @@
     <string name="search_applicants_by_document">Search Applicants by Document</string>
     <string name="add_applicant">Add Applicant</string>
     <string name="delete">Delete</string>
+    <string name="applicant_photo">Applicant Photo</string>
 </resources>
