@@ -5,4 +5,7 @@
     <color name="red">#FF0000</color>
     <color name="light_orange">#FFA87A</color>
     <color name="dark_orange">#E14D1E</color>
+    <color name="sky_blue">#4D81A2</color>
+    <color name="dark_blue">#175381</color>
+    <color name="light_green">#429875</color>
 </resources>
