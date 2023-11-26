@@ -1,23 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etSuperHeroFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_super_heroes"
+        android:inputType="text"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/rvSuperHeroes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintTextFieldSize"
+        android:importantForAutofill="no" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSuperHeroes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/etSuperHeroFilter"
+        app:layout_constraintBottom_toTopOf="@+id/btnSuperHeroAdd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
     </androidx.recyclerview.widget.RecyclerView>
     <Button
         android:id="@+id/btnSuperHeroAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/add"
         android:layout_marginHorizontal="20dp"
-        android:layout_gravity="bottom"
         android:textSize="24sp"
         android:textStyle="bold"
         android:text="@string/add"
         tools:ignore="VisualLintButtonSize" />
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
