@@ -1,22 +1,17 @@
 package com.unsa.heroes.adapter
 
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import com.unsa.heroes.R
 import com.unsa.heroes.SuperHero
+import com.unsa.heroes.databinding.ItemSuperHeroBinding
 
 class SuperHeroViewHolder(view: View): ViewHolder(view) {
-    val superHeroImage = view.findViewById<ImageView>(R.id.ivSuperHeroImage)
-    val superHeroAlias = view.findViewById<TextView>(R.id.tvSuperHeroAlias)
-    val superHeroName = view.findViewById<TextView>(R.id.tvSuperHeroName)
-    val superHeroPublisher = view.findViewById<TextView>(R.id.tvSuperHeroPublisher)
+    val binding = ItemSuperHeroBinding.bind(view)
     fun renderSuperHero(superHero: SuperHero) {
-        Glide.with(superHeroImage.context).load(superHero.photo).into(superHeroImage)
-        superHeroAlias.text = superHero.alias
-        superHeroName.text = superHero.name
-        superHeroPublisher.text = superHero.publisher
+        Glide.with(binding.ivSuperHeroImage.context).load(superHero.photo).into(binding.ivSuperHeroImage)
+        binding.tvSuperHeroAlias.text = superHero.alias
+        binding.tvSuperHeroName.text = superHero.name
+        binding.tvSuperHeroPublisher.text = superHero.publisher
     }
 }
