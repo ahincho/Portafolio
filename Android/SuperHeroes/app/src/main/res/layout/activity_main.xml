@@ -9,4 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </androidx.recyclerview.widget.RecyclerView>
+    <Button
+        android:id="@+id/btnSuperHeroAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/add"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="bottom"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="@string/add"
+        tools:ignore="VisualLintButtonSize" />
 </FrameLayout>
