@@ -1,6 +1,7 @@
 package com.unsa.heroes.adapter
 
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.unsa.heroes.SuperHero
@@ -13,5 +14,8 @@ class SuperHeroViewHolder(view: View): ViewHolder(view) {
         binding.tvSuperHeroAlias.text = superHero.alias
         binding.tvSuperHeroName.text = superHero.name
         binding.tvSuperHeroPublisher.text = superHero.publisher
+        binding.ivSuperHeroImage.setOnClickListener {
+            Toast.makeText(binding.ivSuperHeroImage.context, superHero.name, Toast.LENGTH_LONG).show()
+        }
     }
 }
