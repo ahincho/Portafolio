@@ -24,6 +24,7 @@
             app:layout_constraintStart_toEndOf="@+id/ivSuperHeroImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:paddingVertical="10dp"
             android:textSize="21sp"
             android:textStyle="bold"
             android:textColor="@color/black"
