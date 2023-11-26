@@ -3,6 +3,7 @@ package com.unsa.heroes
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.unsa.heroes.adapter.SuperHeroAdapter
 import com.unsa.heroes.databinding.ActivityMainBinding
@@ -16,12 +17,15 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
     }
     private fun initRecyclerView() {
-        binding.rvSuperHeroes.layoutManager = LinearLayoutManager(this)
+        val manager = LinearLayoutManager(this)
+        val decorator = DividerItemDecoration(this, manager.orientation)
+        binding.rvSuperHeroes.layoutManager = manager
         binding.rvSuperHeroes.adapter = SuperHeroAdapter(SuperHeroProvider.superHeroes) { superHero ->
             onSuperHeroSelected (
                 superHero
             )
         }
+        binding.rvSuperHeroes.addItemDecoration(decorator)
     }
     private fun onSuperHeroSelected(superHero: SuperHero) {
         Toast.makeText(this, superHero.name, Toast.LENGTH_LONG).show()
