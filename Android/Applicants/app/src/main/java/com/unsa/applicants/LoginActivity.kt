@@ -30,6 +30,8 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Credentials are wrong!", Toast.LENGTH_SHORT).show()
             }
+        } else {
+            Toast.makeText(this, "Please complete all the fields!", Toast.LENGTH_SHORT).show()
         }
     }
 }
