@@ -17,5 +17,8 @@ class SuperHeroViewHolder(view: View): ViewHolder(view) {
         binding.ivSuperHeroImage.setOnClickListener {
             Toast.makeText(binding.ivSuperHeroImage.context, superHero.name, Toast.LENGTH_LONG).show()
         }
+        itemView.setOnClickListener {
+            Toast.makeText(binding.ivSuperHeroImage.context, superHero.alias, Toast.LENGTH_LONG).show()
+        }
     }
 }
