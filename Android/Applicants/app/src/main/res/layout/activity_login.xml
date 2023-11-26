@@ -1,75 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_background_demote"
     android:paddingVertical="40dp"
-    android:paddingHorizontal="20dp"
-    android:orientation="vertical"
+    android:paddingHorizontal="30dp"
     tools:context=".LoginActivity">
-    <ImageView
-        android:id="@+id/ivLoginImage"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:contentDescription="@string/login_image"
-        android:src="@drawable/login"
-        app:layout_constraintBottom_toTopOf="@id/etLoginName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck" />
-    <EditText
-        android:id="@+id/etLoginName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivLoginImage"
-        app:layout_constraintBottom_toTopOf="@id/etLoginPassword"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textColorHint="@color/white"
-        android:inputType="text"
-        android:hint="@string/write_your_username"
-        tools:ignore="VisualLintTextFieldSize"
-        android:importantForAutofill="no" />
-    <EditText
-        android:id="@+id/etLoginPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="20dp"
-        android:hint="@string/write_your_password"
-        android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textColorHint="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etLoginName"
-        app:layout_constraintBottom_toTopOf="@id/btnLogin"
-        tools:ignore="VisualLintTextFieldSize"
-        android:importantForAutofill="no" />
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="20dp"
-        android:background="@drawable/login_button_demote"
-        android:text="@string/login"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:icon="@drawable/ic_login"
-        app:iconGravity="textStart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginPassword"
-        app:strokeColor="@color/light_orange"
-        tools:ignore="TextContrastCheck" />
-</LinearLayout>
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivLoginImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/login_image"
+                android:src="@drawable/login"
+                tools:ignore="ImageContrastCheck" />
+        </RelativeLayout>
+        <EditText
+            android:id="@+id/etLoginName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textColorHint="@color/white"
+            android:inputType="text"
+            android:hint="@string/write_your_username"
+            tools:ignore="VisualLintTextFieldSize"
+            android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/etLoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:hint="@string/write_your_password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            tools:ignore="VisualLintTextFieldSize"
+            android:importantForAutofill="no" />
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/button_demote"
+            android:text="@string/login"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            app:icon="@drawable/ic_login"
+            app:iconGravity="textStart"
+            app:strokeColor="@color/light_orange"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+</RelativeLayout>

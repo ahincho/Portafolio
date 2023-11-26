@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background_demote"
+    android:paddingVertical="40dp"
+    android:paddingHorizontal="20dp"
+    tools:context=".MenuActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        tools:ignore="UselessParent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivMenuImage"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="20dp"
+                android:contentDescription="@string/applicant_menu_logo"
+                android:src="@drawable/menu"
+                tools:ignore="ImageContrastCheck" />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/btnApplicantAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/button_demote"
+            android:contentDescription="@string/add_applicant"
+            android:text="@string/add_applicant"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            app:icon="@drawable/ic_applicant_add"
+            app:iconGravity="textStart"
+            tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+        <Button
+            android:id="@+id/btnApplicantList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/button_demote"
+            android:text="@string/see_applicants"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            app:icon="@drawable/ic_applicant_see"
+            app:iconGravity="textStart"
+            tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+    </LinearLayout>
+</RelativeLayout>

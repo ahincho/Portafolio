@@ -24,23 +24,9 @@
         android:textColorHint="@color/white"
         android:textStyle="bold"
         tools:ignore="VisualLintTextFieldSize" />
-    <Button
-        android:id="@+id/btnSuperHeroAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="20dp"
-        android:background="@drawable/login_button_demote"
-        android:contentDescription="@string/add_applicant"
-        android:text="@string/add_applicant"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:icon="@drawable/ic_applicant_add"
-        app:iconGravity="textStart"
-        tools:ignore="VisualLintButtonSize,TextContrastCheck" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvApplicants"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"/>
 </LinearLayout>
