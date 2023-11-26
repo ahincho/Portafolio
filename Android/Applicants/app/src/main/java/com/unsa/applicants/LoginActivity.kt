@@ -1,8 +1,9 @@
 package com.unsa.applicants
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
 import com.unsa.applicants.databinding.ActivityLoginBinding
 import com.unsa.applicants.domain.User
 import com.unsa.applicants.providers.UserProvider
@@ -20,12 +21,15 @@ class LoginActivity : AppCompatActivity() {
             onCheckCredentials()
         }
     }
-    private fun onCheckCredentials(): Boolean {
+    private fun onCheckCredentials() {
         if (binding.etLoginName.text.isNotEmpty() && binding.etLoginPassword.text.isNotEmpty()) {
             val user = User(binding.etLoginName.text.toString(), binding.etLoginPassword.text.toString())
-            Log.i("Angel", "Login: ${UserProvider.users.contains(user)}")
-            return UserProvider.users.contains(user)
+            if (UserProvider.users.contains(user)) {
+                intent = Intent(this, ListActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Credentials are wrong!", Toast.LENGTH_SHORT).show()
+            }
         }
-        return false
     }
 }
