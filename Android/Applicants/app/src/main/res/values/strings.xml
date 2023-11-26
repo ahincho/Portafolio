@@ -19,4 +19,17 @@
     <string name="login_failed">"Login failed"</string>
     <string name="see_applicants">See Applicants</string>
     <string name="applicant_menu_logo">Applicant Menu Logo</string>
+    <string name="name">Name</string>
+    <string name="document">Document</string>
+    <string name="lastname">Lastname</string>
+    <string name="birthday">Birthday</string>
+    <string name="school">School</string>
+    <string name="career">Career</string>
+    <string name="save_applicant">Save Applicant</string>
+    <string name="applicant_document">Applicant Document</string>
+    <string name="applicant_name">Applicant Name</string>
+    <string name="applicant_lastname">Applicant Lastname</string>
+    <string name="applicant_birthday">Applicant Birthday</string>
+    <string name="applicant_school">Applicant School</string>
+    <string name="applicant_career">Applicant Career</string>
 </resources>

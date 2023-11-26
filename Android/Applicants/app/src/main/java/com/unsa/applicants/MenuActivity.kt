@@ -14,6 +14,10 @@ class MenuActivity : AppCompatActivity() {
         initListeners()
     }
     private fun initListeners() {
+        binding.btnApplicantAdd.setOnClickListener {
+            intent = Intent(this, AddActivity::class.java)
+            startActivity(intent)
+        }
         binding.btnApplicantList.setOnClickListener {
             intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
