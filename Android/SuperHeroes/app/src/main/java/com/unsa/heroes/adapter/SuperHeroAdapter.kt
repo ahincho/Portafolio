@@ -7,7 +7,7 @@ import com.unsa.heroes.R
 import com.unsa.heroes.SuperHero
 
 class SuperHeroAdapter (
-    private val superHeroes: List<SuperHero>,
+    private var superHeroes: List<SuperHero>,
     private val onClickListener: (SuperHero) -> Unit,
     private val deleteListener: (Int) -> Unit
 ) : RecyclerView.Adapter<SuperHeroViewHolder>() {
@@ -21,5 +21,9 @@ class SuperHeroAdapter (
     override fun onBindViewHolder(holder: SuperHeroViewHolder, position: Int) {
         val superHero = superHeroes[position]
         holder.renderSuperHero(superHero, onClickListener, deleteListener)
+    }
+    fun updateSuperHeroes(superHeroList: List<SuperHero>) {
+        this.superHeroes = superHeroList
+        notifyDataSetChanged()
     }
 }

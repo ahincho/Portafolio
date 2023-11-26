@@ -3,6 +3,7 @@ package com.unsa.heroes
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.unsa.heroes.adapter.SuperHeroAdapter
@@ -30,6 +31,12 @@ class MainActivity : AppCompatActivity() {
         binding.rvSuperHeroes.adapter = adapter
         binding.rvSuperHeroes.addItemDecoration(decorator)
         binding.btnSuperHeroAdd.setOnClickListener { onSuperHeroAdd() }
+        binding.etSuperHeroFilter.addTextChangedListener { textFilter ->
+            val filterSuperHeroes = superHeroMutableList.filter {
+                    superHero -> superHero.name.lowercase().contains(textFilter.toString().lowercase())
+            }
+            adapter.updateSuperHeroes(filterSuperHeroes)
+        }
     }
     private fun onSuperHeroSelected(superHero: SuperHero) {
         Toast.makeText(this, superHero.name, Toast.LENGTH_LONG).show()
