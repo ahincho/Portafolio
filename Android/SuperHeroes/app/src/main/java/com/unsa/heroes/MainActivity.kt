@@ -21,16 +21,20 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         val manager = LinearLayoutManager(this)
         val decorator = DividerItemDecoration(this, manager.orientation)
-        adapter = SuperHeroAdapter(superHeroMutableList) { superHero ->
-            onSuperHeroSelected (
-                superHero
-            )
-        }
+        adapter = SuperHeroAdapter (
+            superHeroes =  superHeroMutableList,
+            onClickListener = { superHero -> onSuperHeroSelected(superHero) },
+            deleteListener = { position -> onSuperHeroDelete(position) }
+        )
         binding.rvSuperHeroes.layoutManager = manager
         binding.rvSuperHeroes.adapter = adapter
         binding.rvSuperHeroes.addItemDecoration(decorator)
     }
     private fun onSuperHeroSelected(superHero: SuperHero) {
         Toast.makeText(this, superHero.name, Toast.LENGTH_LONG).show()
+    }
+    private fun onSuperHeroDelete(position: Int) {
+        superHeroMutableList.removeAt(position)
+        adapter.notifyItemRemoved(position)
     }
 }
