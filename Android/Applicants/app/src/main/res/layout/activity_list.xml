@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ListActivity">
     <EditText
@@ -17,18 +18,22 @@
         android:textColorHint="@color/black"
         tools:ignore="VisualLintTextFieldSize"
         android:importantForAutofill="no" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvApplicants"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btnSuperHeroAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/add_applicant"
         android:layout_marginHorizontal="20dp"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:text="@string/add_applicant"
+        android:background="@drawable/login_button_demote"
+        app:icon="@drawable/ic_applicant_add"
+        app:iconGravity="textStart"
+        app:backgroundTint="@null"
         tools:ignore="VisualLintButtonSize"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvApplicants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

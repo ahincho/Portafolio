@@ -21,4 +21,8 @@ class ApplicantAdapter (
         val applicant = applicants[position]
         holder.renderApplicant(applicant, deleteListener)
     }
+    fun updateApplicants(applicantsList: List<Applicant>) {
+        this.applicants = applicantsList
+        notifyDataSetChanged()
+    }
 }

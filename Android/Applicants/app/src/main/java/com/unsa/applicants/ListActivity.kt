@@ -2,6 +2,7 @@ package com.unsa.applicants
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
@@ -28,6 +29,12 @@ class ListActivity : AppCompatActivity() {
         )
         binding.rvApplicants.layoutManager = manager
         binding.rvApplicants.adapter = adapter
+        binding.etApplicantFilter.addTextChangedListener { textFilter ->
+            val filteredApplicants = applicants.filter {
+                applicant -> applicant.document.contains(textFilter.toString())
+            }
+            adapter.updateApplicants(filteredApplicants)
+        }
     }
     private fun onApplicantDelete(position: Int) {
         applicants.removeAt(position)
