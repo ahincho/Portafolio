@@ -4,4 +4,6 @@
     <string name="write_your_password">Write your password (i.e. john_doe)</string>
     <string name="login_image">Login Image</string>
     <string name="login">Login</string>
+    <string name="search_applicants_by_document">Search Applicants by Document</string>
+    <string name="add_applicant">Add Applicant</string>
 </resources>
