@@ -10,6 +10,8 @@ import com.unsa.heroes.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var superHeroMutableList: MutableList<SuperHero> = SuperHeroProvider.superHeroes.toMutableList()
+    private lateinit var adapter: SuperHeroAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -19,12 +21,13 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         val manager = LinearLayoutManager(this)
         val decorator = DividerItemDecoration(this, manager.orientation)
-        binding.rvSuperHeroes.layoutManager = manager
-        binding.rvSuperHeroes.adapter = SuperHeroAdapter(SuperHeroProvider.superHeroes) { superHero ->
+        adapter = SuperHeroAdapter(superHeroMutableList) { superHero ->
             onSuperHeroSelected (
                 superHero
             )
         }
+        binding.rvSuperHeroes.layoutManager = manager
+        binding.rvSuperHeroes.adapter = adapter
         binding.rvSuperHeroes.addItemDecoration(decorator)
     }
     private fun onSuperHeroSelected(superHero: SuperHero) {
