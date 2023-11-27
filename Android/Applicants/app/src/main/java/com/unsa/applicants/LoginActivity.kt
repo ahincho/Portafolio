@@ -3,6 +3,8 @@ package com.unsa.applicants
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.widget.EditText
 import android.widget.Toast
 import com.unsa.applicants.databinding.ActivityLoginBinding
 import com.unsa.applicants.domain.User
@@ -25,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
         if (binding.etLoginName.text.isNotEmpty() && binding.etLoginPassword.text.isNotEmpty()) {
             val user = User(binding.etLoginName.text.toString(), binding.etLoginPassword.text.toString())
             if (UserProvider.users.contains(user)) {
+                cleanFields()
                 intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
             } else {
@@ -33,5 +36,12 @@ class LoginActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Please complete all the fields!", Toast.LENGTH_SHORT).show()
         }
+    }
+    private fun cleanFields() {
+        cleanField(binding.etLoginName)
+        cleanField(binding.etLoginPassword)
+    }
+    private fun cleanField(field: EditText) {
+        field.text = Editable.Factory.getInstance().newEditable("")
     }
 }
