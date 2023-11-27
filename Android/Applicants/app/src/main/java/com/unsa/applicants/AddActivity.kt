@@ -12,8 +12,8 @@ import com.unsa.applicants.providers.ApplicantProvider
 class AddActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityAddBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initListeners()
     }
