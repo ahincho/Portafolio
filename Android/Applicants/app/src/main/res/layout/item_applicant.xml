@@ -61,23 +61,24 @@
             app:layout_constraintTop_toBottomOf="@id/tvApplicantSchool"
             app:layout_constraintBottom_toTopOf="@+id/btnApplicantDelete"
             tools:text="Applicant Career"/>
+
         <Button
             android:id="@+id/btnApplicantDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
+            android:background="@drawable/button_demote"
+            android:text="@string/delete"
+            android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
-            android:text="@string/delete"
-            android:background="@drawable/button_demote"
             app:backgroundTint="@null"
             app:icon="@drawable/ic_delete_forever"
-            app:layout_constraintStart_toEndOf="@+id/ivApplicantPhoto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvApplicantCareer"
             app:layout_constraintBottom_toTopOf="@id/tvApplicantDocument"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivApplicantPhoto"
+            app:layout_constraintTop_toBottomOf="@id/tvApplicantCareer"
+            tools:ignore="TextContrastCheck" />
         <TextView
             android:id="@+id/tvApplicantDocument"
             android:layout_width="wrap_content"
