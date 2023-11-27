@@ -32,4 +32,5 @@
     <string name="applicant_birthday">Applicant Birthday</string>
     <string name="applicant_school">Applicant School</string>
     <string name="applicant_career">Applicant Career</string>
+    <string name="add_applicant_icon">Add Applicant Icon</string>
 </resources>

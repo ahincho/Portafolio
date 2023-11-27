@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         if (binding.etLoginName.text.isNotEmpty() && binding.etLoginPassword.text.isNotEmpty()) {
             val user = User(binding.etLoginName.text.toString(), binding.etLoginPassword.text.toString())
             if (UserProvider.users.contains(user)) {
-                intent = Intent(this, ListActivity::class.java)
+                intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Credentials are wrong!", Toast.LENGTH_SHORT).show()

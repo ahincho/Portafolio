@@ -1,11 +1,9 @@
 package com.unsa.applicants
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.unsa.applicants.adapters.ApplicantAdapter
 import com.unsa.applicants.databinding.ActivityListBinding
 import com.unsa.applicants.domain.Applicant

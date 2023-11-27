@@ -31,27 +31,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textColorHint="@color/white"
-            android:inputType="text"
             android:hint="@string/write_your_username"
-            tools:ignore="VisualLintTextFieldSize"
-            android:importantForAutofill="no" />
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="VisualLintTextFieldSize" />
         <EditText
             android:id="@+id/etLoginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
             android:hint="@string/write_your_password"
+            android:importantForAutofill="no"
             android:inputType="textPassword"
             android:textColor="@color/white"
-            android:textStyle="bold"
             android:textColorHint="@color/white"
             android:textSize="20sp"
-            tools:ignore="VisualLintTextFieldSize"
-            android:importantForAutofill="no" />
+            android:textStyle="bold"
+            tools:ignore="VisualLintTextFieldSize" />
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"

@@ -20,8 +20,9 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginVertical="20dp"
-                android:src="@drawable/add"/>
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/add"
+                android:contentDescription="@string/add_applicant_icon" />
         </RelativeLayout>
         <TextView
             android:layout_width="match_parent"
@@ -30,14 +31,16 @@
             android:textColor="@color/white"
             android:text="@string/document"/>
         <EditText
+            android:id="@+id/etDocument"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/applicant_document"
             android:importantForAutofill="no"
             android:inputType="text"
+            android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:hint="@string/applicant_document"
-            tools:ignore="LabelFor"/>
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,14 +48,16 @@
             android:textColor="@color/white"
             android:text="@string/name"/>
         <EditText
+            android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/applicant_name"
             android:importantForAutofill="no"
             android:inputType="text"
+            android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:hint="@string/applicant_name"
-            tools:ignore="LabelFor"/>
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,14 +65,16 @@
             android:textColor="@color/white"
             android:text="@string/lastname"/>
         <EditText
+            android:id="@+id/etLastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/applicant_lastname"
             android:importantForAutofill="no"
             android:inputType="text"
+            android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:hint="@string/applicant_lastname"
-            tools:ignore="LabelFor"/>
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,14 +82,16 @@
             android:textColor="@color/white"
             android:text="@string/birthday"/>
         <EditText
+            android:id="@+id/etBirthday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/applicant_birthday"
             android:importantForAutofill="no"
             android:inputType="date"
+            android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:hint="@string/applicant_birthday"
-            tools:ignore="LabelFor"/>
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,14 +99,16 @@
             android:textColor="@color/white"
             android:text="@string/school"/>
         <EditText
+            android:id="@+id/etSchool"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/applicant_school"
             android:importantForAutofill="no"
             android:inputType="text"
+            android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:hint="@string/applicant_school"
-            tools:ignore="LabelFor"/>
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -105,22 +116,25 @@
             android:textColor="@color/white"
             android:text="@string/career"/>
         <EditText
+            android:id="@+id/etCareer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/applicant_career"
             android:importantForAutofill="no"
             android:inputType="text"
+            android:minHeight="48dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:hint="@string/applicant_career"
-            tools:ignore="LabelFor"/>
+            tools:ignore="LabelFor,VisualLintTextFieldSize" />
         <Button
             android:id="@+id/btnApplicantAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"
+            android:layout_marginVertical="10dp"
             android:background="@drawable/button_demote"
             android:contentDescription="@string/save_applicant"
             android:text="@string/save_applicant"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="@null"
