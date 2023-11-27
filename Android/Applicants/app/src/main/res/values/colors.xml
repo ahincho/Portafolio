@@ -8,4 +8,7 @@
     <color name="sky_blue">#4D81A2</color>
     <color name="dark_blue">#175381</color>
     <color name="light_green">#429875</color>
+    <color name="strong_black">#020202</color>
+    <color name="tiny_black">#19191A</color>
+    <color name="gray">#444447</color>
 </resources>
