@@ -5,4 +5,12 @@
     <string name="first_fragment">First Fragment</string>
     <string name="second_fragment">Second Fragment</string>
     <string name="third_fragment">Third Fragment</string>
+    <string name="your_rating_matters">Your Rating Matters</string>
+    <string name="excellent">Excellent</string>
+    <string name="very_good">Very Good</string>
+    <string name="good">Good</string>
+    <string name="satisfactory">Satisfactory</string>
+    <string name="poor">Poor</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
 </resources>
