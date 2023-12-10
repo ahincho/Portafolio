@@ -21,11 +21,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textColor="@color/subtitle_text"
-        android:textStyle="bold"
+        android:text="@string/categories"
         android:textAllCaps="true"
-        android:text="@string/categories">
+        android:textColor="@color/subtitle_text"
+        android:textSize="24sp"
+        android:textStyle="bold">
     </TextView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategories"
