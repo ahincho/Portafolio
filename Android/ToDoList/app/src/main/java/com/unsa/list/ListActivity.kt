@@ -3,6 +3,10 @@ package com.unsa.list
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -14,9 +18,9 @@ class ListActivity : AppCompatActivity() {
         Category.Other
     )
     private val tasks = mutableListOf(
-        Task("Business", Category.Business, false),
-        Task("Other", Category.Other, false),
-        Task("Personal", Category.Personal, false)
+        Task("Business Task", Category.Business, false),
+        Task("Other Task", Category.Other, false),
+        Task("Personal Task", Category.Personal, false)
     )
     private lateinit var rvCategories: RecyclerView
     private lateinit var categoryAdapter: CategoryAdapter
@@ -26,11 +30,11 @@ class ListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
-        initComponent()
+        initComponents()
         initUserInterface()
         initListeners()
     }
-    private fun initComponent() {
+    private fun initComponents() {
         rvCategories = findViewById(R.id.rvCategories)
         rvTasks = findViewById(R.id.rvTasks)
         fabAddTask = findViewById(R.id.fabAddTask)
@@ -51,6 +55,27 @@ class ListActivity : AppCompatActivity() {
     private fun showDialog() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_add_task)
+        val btnAddTask: Button = dialog.findViewById(R.id.btnAddTask)
+        val etTask: EditText = dialog.findViewById(R.id.etTask)
+        val rgCategories: RadioGroup = dialog.findViewById(R.id.rgCategories)
+        btnAddTask.setOnClickListener {
+            val task = etTask.text.toString()
+            if (task.isNotEmpty()) {
+                val selected = rgCategories.checkedRadioButtonId
+                val radioButton: RadioButton = rgCategories.findViewById(selected)
+                val category: Category = when (radioButton.text) {
+                    getString(R.string.business) -> Category.Business
+                    getString(R.string.personal) -> Category.Personal
+                    else -> Category.Other
+                }
+                tasks.add(Task(etTask.text.toString(), category, false))
+                updateTaskList()
+                dialog.hide()
+            }
+        }
         dialog.show()
+    }
+    private fun updateTaskList() {
+        taskAdapter.notifyDataSetChanged()
     }
 }
