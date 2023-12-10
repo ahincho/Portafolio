@@ -3,7 +3,7 @@ package com.unsa.quotations.model
 class QuoteProvider {
     companion object {
         fun randomQuote() : QuoteModel {
-            val position = (1 .. quotes.size).random()
+            val position = (quotes.indices).random()
             return quotes[position]
         }
         private val quotes = listOf<QuoteModel>(
