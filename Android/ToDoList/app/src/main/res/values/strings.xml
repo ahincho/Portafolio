@@ -3,4 +3,5 @@
     <string name="welcome">Welcome, Angel!</string>
     <string name="categories">Categories</string>
     <string name="tasks">Tasks</string>
+    <string name="add_task_button">Add Task Button</string>
 </resources>
