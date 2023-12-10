@@ -14,7 +14,7 @@ class QuoteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuoteBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_quote)
+        setContentView(binding.root)
         quoteViewModel.quoteModel.observe(this, Observer { currentQuote ->
             binding.tvQuote.text = currentQuote.quote
             binding.tvAuthor.text = currentQuote.author
