@@ -40,7 +40,7 @@ class ListActivity : AppCompatActivity() {
         fabAddTask = findViewById(R.id.fabAddTask)
     }
     private fun initUserInterface() {
-        categoryAdapter = CategoryAdapter(categories)
+        categoryAdapter = CategoryAdapter(categories) { position -> updateCategories(position) }
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoryAdapter
         taskAdapter = TaskAdapter(tasks) { position -> onItemSelected(position) }
@@ -69,17 +69,25 @@ class ListActivity : AppCompatActivity() {
                     else -> Category.Other
                 }
                 tasks.add(Task(etTask.text.toString(), category, false))
-                updateTaskList()
+                updateTasks()
                 dialog.hide()
             }
         }
         dialog.show()
     }
-    private fun updateTaskList() {
+    private fun updateTasks() {
+        val selectedCategories: List<Category> = categories.filter { it.isSelected }
+        val selectedTasks = tasks.filter { selectedCategories.contains(it.category) }
+        taskAdapter.tasks = selectedTasks
         taskAdapter.notifyDataSetChanged()
     }
     private fun onItemSelected(position: Int) {
         tasks[position].selected = !tasks[position].selected
-        updateTaskList()
+        updateTasks()
+    }
+    private fun updateCategories(position: Int) {
+        categories[position].isSelected = !categories[position].isSelected
+        categoryAdapter.notifyDataSetChanged()
+        updateTasks()
     }
 }

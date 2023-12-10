@@ -2,13 +2,24 @@ package com.unsa.list
 
 import android.view.View
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class CategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val tvCategoryName: TextView = view.findViewById(R.id.tvCategoryName)
     private val vwCategoryDivider: View = view.findViewById(R.id.vwCategoryDivider)
-    fun render(category: Category) {
+    private val vwContainer: CardView = view.findViewById(R.id.vwContainer)
+    fun render(category: Category, onItemSelected: (Int) -> Unit) {
+        val color = if (category.isSelected) {
+            R.color.background_card
+        } else {
+            R.color.background_disable
+        }
+        vwContainer.setCardBackgroundColor(ContextCompat.getColor(vwContainer.context, color))
+        itemView.setOnClickListener {
+            onItemSelected(layoutPosition)
+        }
         when (category) {
             Category.Business -> {
                 tvCategoryName.text = "Business"
