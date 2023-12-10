@@ -1,4 +1,4 @@
-package com.unsa.quotations.view
+package com.unsa.quotations.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.unsa.quotations.R
 import com.unsa.quotations.databinding.ActivityQuoteBinding
-import com.unsa.quotations.viewmodel.QuoteViewModel
+import com.unsa.quotations.ui.viewmodel.QuoteViewModel
 
 class QuoteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuoteBinding

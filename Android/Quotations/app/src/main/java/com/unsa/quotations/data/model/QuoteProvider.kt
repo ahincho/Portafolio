@@ -1,4 +1,4 @@
-package com.unsa.quotations.model
+package com.unsa.quotations.data.model
 
 class QuoteProvider {
     companion object {
