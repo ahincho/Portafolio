@@ -43,7 +43,7 @@ class ListActivity : AppCompatActivity() {
         categoryAdapter = CategoryAdapter(categories)
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoryAdapter
-        taskAdapter = TaskAdapter(tasks)
+        taskAdapter = TaskAdapter(tasks) { position -> onItemSelected(position) }
         rvTasks.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvTasks.adapter = taskAdapter
     }
@@ -77,5 +77,9 @@ class ListActivity : AppCompatActivity() {
     }
     private fun updateTaskList() {
         taskAdapter.notifyDataSetChanged()
+    }
+    private fun onItemSelected(position: Int) {
+        tasks[position].selected = !tasks[position].selected
+        updateTaskList()
     }
 }
