@@ -5,10 +5,11 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
-import com.unsa.quotations.R
 import com.unsa.quotations.databinding.ActivityQuoteBinding
 import com.unsa.quotations.ui.viewmodel.QuoteViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class QuoteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuoteBinding
     private val quoteViewModel: QuoteViewModel by viewModels()
