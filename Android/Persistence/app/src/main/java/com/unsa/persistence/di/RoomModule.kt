@@ -2,7 +2,7 @@ package com.unsa.persistence.di
 
 import android.content.Context
 import androidx.room.Room
-import com.unsa.persistence.data.database.ApplicantDatabase
+import com.unsa.persistence.data.database.ApplicationDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,8 +17,11 @@ class RoomModule {
     @Singleton
     @Provides
     fun providesRoom(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, ApplicantDatabase::class.java, APPLICANTS_DATABASE_NAME)
+        Room.databaseBuilder(context, ApplicationDatabase::class.java, APPLICANTS_DATABASE_NAME).build()
     @Singleton
     @Provides
-    fun providesApplicantDao(database: ApplicantDatabase) = database.getApplicantDao()
+    fun providesApplicantDao(database: ApplicationDatabase) = database.getApplicantDao()
+    @Singleton
+    @Provides
+    fun providesUserDao(database: ApplicationDatabase) = database.getUserDao()
 }
