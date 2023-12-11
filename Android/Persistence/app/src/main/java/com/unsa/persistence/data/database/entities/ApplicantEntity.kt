@@ -3,6 +3,7 @@ package com.unsa.persistence.data.database.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.unsa.persistence.data.model.Applicant
 
 @Entity(tableName = "applicants")
 data class ApplicantEntity (
@@ -15,3 +16,5 @@ data class ApplicantEntity (
     @ColumnInfo(name = "school") val school: String,
     @ColumnInfo(name = "career") val career: String
 )
+
+fun Applicant.toDatabase() = ApplicantEntity(id, document, name, lastname, birthday, school, career)

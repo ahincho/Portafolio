@@ -2,8 +2,6 @@ package com.unsa.persistence.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.unsa.persistence.R
-import com.unsa.persistence.data.database.daos.ApplicantDao
 import com.unsa.persistence.databinding.ActivityLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
