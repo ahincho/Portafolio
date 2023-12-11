@@ -6,23 +6,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.view.LoginActivity">
-    <ImageView
-        android:id="@+id/ivLogin"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:contentDescription="@string/login_image"
-        android:src="@drawable/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck" />
-    <Button
-        android:id="@+id/btnAddApplicant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Applicant"
-        app:layout_constraintTop_toBottomOf="@id/ivLogin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/ivLogin"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:contentDescription="@string/login_image"
+            android:src="@drawable/login"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ImageContrastCheck" />
+        <Button
+            android:id="@+id/btnLogin"
+            style="@style/OrangeButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:text="@string/login"
+            app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLogin"
+            tools:ignore="TextContrastCheck" />
+        <Button
+            android:id="@+id/btnRegister"
+            style="@style/OrangeButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:text="@string/register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

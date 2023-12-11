@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.AddActivity">
+    <ImageView
+        android:id="@id/ivRegister"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/add"
+        app:layout_constraintBottom_toTopOf="@id/llcContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/add_applicant_image" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llcContainer"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/ivRegister"
+        app:layout_constraintBottom_toTopOf="@id/btnAdd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/document"
+            style="@style/Subtitle"/>
+        <EditText
+            android:id="@+id/etDocument"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/applicant_document"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            tools:ignore="TextContrastCheck" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            style="@style/Subtitle"/>
+        <EditText
+            android:id="@+id/etName"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/applicant_name"
+            tools:ignore="TextContrastCheck"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lastname"
+            style="@style/Subtitle"/>
+        <EditText
+            android:id="@+id/etLastname"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/applicant_lastname"
+            tools:ignore="TextContrastCheck"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/birthday"
+            style="@style/Subtitle"/>
+        <EditText
+            android:id="@+id/etBirthday"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/applicant_birthday"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            tools:ignore="TextContrastCheck" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/school"
+            style="@style/Subtitle"/>
+        <EditText
+            android:id="@+id/etSchool"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/applicant_school"
+            tools:ignore="TextContrastCheck"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/career"
+            style="@style/Subtitle"/>
+        <EditText
+            android:id="@+id/etCareer"
+            style="@style/Input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/applicant_career"
+            tools:ignore="TextContrastCheck"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <Button
+        android:id="@+id/btnAdd"
+        style="@style/OrangeButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add_applicant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llcContainer"
+        tools:ignore="TextContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">Persistence</string>
     <string name="login_image">Login Image</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="document">Document</string>
+    <string name="applicant_document">Applicant Document</string>
+    <string name="add_applicant">Add Applicant</string>
+    <string name="applicant_name">Applicant Name</string>
+    <string name="name">Name</string>
+    <string name="applicant_lastname">Applicant Lastname</string>
+    <string name="lastname">Lastname</string>
+    <string name="birthday">Birthday</string>
+    <string name="applicant_birthday">Applicant Birthday</string>
+    <string name="school">School</string>
+    <string name="applicant_school">Applicant School</string>
+    <string name="career">Career</string>
+    <string name="applicant_career">Applicant Career</string>
+    <string name="add_applicant_image">Add Applicant Image</string>
 </resources>
