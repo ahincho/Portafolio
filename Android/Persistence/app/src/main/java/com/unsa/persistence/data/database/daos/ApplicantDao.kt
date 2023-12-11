@@ -11,5 +11,7 @@ interface ApplicantDao {
     @Query("SELECT * FROM applicants")
     suspend fun getAllApplicants(): List<ApplicantEntity>
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(applicants: List<ApplicantEntity>)
+    suspend fun insertApplicant(applicant: ApplicantEntity)
+    @Query("DELETE FROM applicants WHERE id = :id")
+    suspend fun deleteApplicantById(id: Int)
 }

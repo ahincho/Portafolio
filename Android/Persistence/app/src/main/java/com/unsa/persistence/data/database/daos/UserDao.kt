@@ -11,5 +11,7 @@ interface UserDao {
     @Query("SELECT * FROM users WHERE name = :name AND password = :password")
     suspend fun getUserByNameAndPassword(name: String, password: String): UserEntity
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(users: List<UserEntity>)
+    suspend fun insertUser(user: UserEntity)
+    @Query("DELETE FROM users WHERE id = :id")
+    suspend fun deleteUser(id: Int)
 }
