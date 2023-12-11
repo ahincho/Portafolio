@@ -1,7 +1,8 @@
-package com.unsa.persistence
+package com.unsa.persistence.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.unsa.persistence.R
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
