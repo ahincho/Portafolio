@@ -24,6 +24,10 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             checkCredentials()
         }
+        binding.btnRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
     private fun checkCredentials() {
         if (binding.etUser.text.isNotEmpty() && binding.etPassword.text.isNotEmpty()) {
