@@ -3,20 +3,18 @@ package com.unsa.persistence.ui.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.unsa.persistence.data.model.User
-import com.unsa.persistence.domain.LoginUseCase
+import com.unsa.persistence.domain.InsertUserUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(
-    private val loginUseCase: LoginUseCase
+class RegisterViewModel @Inject constructor (
+    private val insertUserUseCase: InsertUserUseCase
 ) : ViewModel() {
-    fun getSuccessfulLogin(user: User): Boolean {
-        var loginResult = false
-        viewModelScope.launch {
-           loginResult = loginUseCase.invoke(user)
+    fun insertUserInDatabase(user: User) {
+        viewModelScope.launch() {
+            insertUserUseCase.invoke(user)
         }
-        return loginResult
     }
 }

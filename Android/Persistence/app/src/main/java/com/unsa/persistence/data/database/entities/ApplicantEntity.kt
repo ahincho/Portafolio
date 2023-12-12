@@ -26,7 +26,7 @@ data class ApplicantEntity (
 )
 
 fun Applicant.toDatabase() = ApplicantEntity (
-    document =  document, name = name,
+    document = document, name = name,
     lastname = lastname, birthday = birthday,
     school = school, career =  career
 )

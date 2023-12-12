@@ -7,7 +7,12 @@ import javax.inject.Inject
 class LoginUseCase @Inject constructor (
     private val repository: ApplicationRepository
 ) {
-    operator fun invoke(user: User): Boolean {
-        return repository.getAllUsers().contains(user)
+    suspend operator fun invoke(user: User): Boolean {
+        val users = repository.getAllUsers()
+        return if (users.isNotEmpty()) {
+            users.contains(user)
+        } else {
+            false
+        }
     }
 }
