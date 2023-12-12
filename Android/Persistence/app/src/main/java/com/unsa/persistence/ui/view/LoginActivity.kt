@@ -6,14 +6,16 @@ import android.os.Bundle
 import android.text.Editable
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.viewModels
 import com.unsa.persistence.data.model.User
-import com.unsa.persistence.data.providers.UserProvider
 import com.unsa.persistence.databinding.ActivityLoginBinding
+import com.unsa.persistence.ui.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private val loginViewModel: LoginViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -34,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             val name = binding.etUser.text.toString()
             val password = binding.etPassword.text.toString()
             val user = User(0, name, password)
-            if (UserProvider.login(user)) {
+            if (loginViewModel.login(user)) {
                 cleanFields()
                 intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
