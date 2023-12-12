@@ -4,7 +4,7 @@ import com.unsa.persistence.data.model.Applicant
 
 class ApplicantProvider {
     companion object {
-        private val applicants = listOf<Applicant> (
+        val applicants = mutableListOf<Applicant> (
             Applicant(1, "32609362", "Trudey", "Dalman", "02/06/2000", "Meadowbrook Elementary School", "Business Development"),
             Applicant(2, "12160424", "Moyna", "Blabey", "23/06/2001", "Maplewood High School", "Accounting"),
             Applicant(3, "42607122", "Dore", "Bassano", "07/01/2001", "Pinecrest Academy", "Engineering"),
