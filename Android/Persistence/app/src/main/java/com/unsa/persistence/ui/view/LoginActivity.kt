@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.unsa.persistence.data.model.User
 import com.unsa.persistence.databinding.ActivityLoginBinding
+import com.unsa.persistence.domain.LoginUseCase
 import com.unsa.persistence.ui.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
             val name = binding.etUser.text.toString()
             val password = binding.etPassword.text.toString()
             val user = User(0, name, password)
-            if (loginViewModel.login(user)) {
+            if (loginViewModel.getSuccessfulLogin(user)) {
                 cleanFields()
                 intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
