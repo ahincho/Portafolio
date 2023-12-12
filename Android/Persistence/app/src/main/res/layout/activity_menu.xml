@@ -29,7 +29,7 @@
         <Button
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="@string/search_applicant"
+            android:text="@string/view_applicants"
             android:layout_marginTop="15dp"
             style="@style/OrangeButton"/>
     </LinearLayout>
