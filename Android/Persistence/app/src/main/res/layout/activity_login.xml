@@ -17,11 +17,40 @@
             android:layout_height="200dp"
             android:contentDescription="@string/login_image"
             android:src="@drawable/login"
+            android:layout_marginBottom="15dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/btnLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="ImageContrastCheck" />
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            style="@style/Subtitle"/>
+        <EditText
+            android:id="@+id/etUser"
+            style="@style/Input"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/your_username"
+            android:inputType="text"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            style="@style/Subtitle"/>
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/Input"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/your_password"
+            tools:ignore="TextContrastCheck,TextFields"
+            android:inputType="text"
+            android:importantForAutofill="no" />
         <Button
             android:id="@+id/btnLogin"
             style="@style/OrangeButton"

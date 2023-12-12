@@ -17,4 +17,8 @@
     <string name="career">Career</string>
     <string name="applicant_career">Applicant Career</string>
     <string name="add_applicant_image">Add Applicant Image</string>
+    <string name="username">Username</string>
+    <string name="your_username">Your Username</string>
+    <string name="password">Password</string>
+    <string name="your_password">Your Password</string>
 </resources>
