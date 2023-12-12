@@ -1,4 +1,6 @@
-package com.unsa.persistence.data.model
+package com.unsa.persistence.data.providers
+
+import com.unsa.persistence.data.model.User
 
 class UserProvider {
     companion object {

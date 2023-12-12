@@ -1,4 +1,6 @@
-package com.unsa.persistence.data.model
+package com.unsa.persistence.data.providers
+
+import com.unsa.persistence.data.model.Applicant
 
 class ApplicantProvider {
     companion object {

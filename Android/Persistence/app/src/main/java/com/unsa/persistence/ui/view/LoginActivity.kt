@@ -7,7 +7,7 @@ import android.text.Editable
 import android.widget.EditText
 import android.widget.Toast
 import com.unsa.persistence.data.model.User
-import com.unsa.persistence.data.model.UserProvider
+import com.unsa.persistence.data.providers.UserProvider
 import com.unsa.persistence.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
