@@ -1,5 +1,7 @@
 package com.unsa.persistence.data.model
 
+import com.unsa.persistence.data.database.entities.UserEntity
+
 data class User (val id: Int, val name: String, val password: String) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -15,3 +17,5 @@ data class User (val id: Int, val name: String, val password: String) {
         return result
     }
 }
+
+fun UserEntity.toDomain() = User(id, name, password)

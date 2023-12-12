@@ -22,4 +22,8 @@ object RoomModule {
     @Provides
     fun provideApplicantDao(database: ApplicantsDatabase) =
         database.getApplicantDao()
+    @Singleton
+    @Provides
+    fun provideUserDao(database: ApplicantsDatabase) =
+        database.getUserDao()
 }
