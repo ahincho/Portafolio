@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Persistence"
         tools:targetApi="31">
         <activity
+            android:name=".ui.view.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.ViewActivity"
             android:exported="false" />
         <activity

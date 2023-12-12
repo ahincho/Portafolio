@@ -11,6 +11,7 @@ import com.unsa.persistence.core.Constants.Companion.APPLICANT_ID
 import com.unsa.persistence.core.Constants.Companion.APPLICANT_LASTNAME
 import com.unsa.persistence.core.Constants.Companion.APPLICANT_NAME
 import com.unsa.persistence.core.Constants.Companion.APPLICANT_SCHOOL
+import com.unsa.persistence.data.model.Applicant
 
 @Entity(tableName = APPLICANTS_TABLE)
 data class ApplicantEntity (
@@ -22,4 +23,10 @@ data class ApplicantEntity (
     @ColumnInfo(name = APPLICANT_BIRTHDAY) val birthday: String,
     @ColumnInfo(name = APPLICANT_SCHOOL) val school: String,
     @ColumnInfo(name = APPLICANT_CAREER) val career: String
+)
+
+fun Applicant.toDatabase() = ApplicantEntity (
+    document =  document, name = name,
+    lastname = lastname, birthday = birthday,
+    school = school, career =  career
 )

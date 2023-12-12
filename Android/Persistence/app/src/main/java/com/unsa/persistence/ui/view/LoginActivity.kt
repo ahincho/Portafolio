@@ -9,7 +9,9 @@ import android.widget.Toast
 import com.unsa.persistence.data.model.User
 import com.unsa.persistence.data.providers.UserProvider
 import com.unsa.persistence.databinding.ActivityLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
