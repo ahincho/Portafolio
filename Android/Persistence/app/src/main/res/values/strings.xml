@@ -23,4 +23,6 @@
     <string name="your_password">Your Password</string>
     <string name="view_applicants">View Applicants</string>
     <string name="search_applicant_by_document">Search Applicant By Document</string>
+    <string name="applicant_photo">Applicant Photo</string>
+    <string name="delete">Delete</string>
 </resources>
