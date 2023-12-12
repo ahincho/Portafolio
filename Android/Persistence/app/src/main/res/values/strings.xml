@@ -25,4 +25,6 @@
     <string name="search_applicant_by_document">Search Applicant By Document</string>
     <string name="applicant_photo">Applicant Photo</string>
     <string name="delete">Delete</string>
+    <string name="add_user_image">Add User Image</string>
+    <string name="add_user">Add User</string>
 </resources>
