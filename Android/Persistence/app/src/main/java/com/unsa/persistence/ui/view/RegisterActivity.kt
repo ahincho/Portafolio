@@ -1,6 +1,5 @@
 package com.unsa.persistence.ui.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -28,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         if (binding.etUsername.text.isNotEmpty() && binding.etPassword.text.isNotEmpty()) {
             val name = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
-            val user = User(0, name, password)
+            val user = User(name, password)
             registerViewModel.insertUserInDatabase(user)
             Toast.makeText(this, "User recorded in Database!", Toast.LENGTH_SHORT).show()
             cleanFields()

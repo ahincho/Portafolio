@@ -5,12 +5,9 @@ import com.unsa.persistence.data.model.User
 class UserProvider {
     companion object {
         private val users = listOf<User> (
-            User(1, "Admin", "admin"),
-            User(2, "Teacher", "teacher"),
-            User(3, "Angel", "angel")
+            User("Admin", "admin"),
+            User("Teacher", "teacher"),
+            User("Angel", "angel")
         )
-        fun login(user: User): Boolean {
-            return users.contains(user)
-        }
     }
 }
