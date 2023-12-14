@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
         if (binding.etUser.text.isNotEmpty() && binding.etPassword.text.isNotEmpty()) {
             val name = binding.etUser.text.toString()
             val password = binding.etPassword.text.toString()
-            val user = User(name, password)
+            val user = User(0, name, password)
             if (loginViewModel.getSuccessfulLogin(user)) {
                 cleanFields()
                 intent = Intent(this, MenuActivity::class.java)

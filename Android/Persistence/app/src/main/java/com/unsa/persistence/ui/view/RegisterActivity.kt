@@ -27,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         if (binding.etUsername.text.isNotEmpty() && binding.etPassword.text.isNotEmpty()) {
             val name = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
-            val user = User(name, password)
+            val user = User(0, name, password)
             registerViewModel.insertUserInDatabase(user)
             Toast.makeText(this, "User recorded in Database!", Toast.LENGTH_SHORT).show()
             cleanFields()

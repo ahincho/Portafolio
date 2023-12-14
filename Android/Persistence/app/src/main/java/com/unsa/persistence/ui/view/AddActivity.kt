@@ -50,7 +50,7 @@ class AddActivity : AppCompatActivity() {
         val birthday = getText(binding.etBirthday)
         val school = getText(binding.etSchool)
         val career = getText(binding.etCareer)
-        return Applicant(document, name, lastname, birthday, school, career)
+        return Applicant(0, document, name, lastname, birthday, school, career)
     }
     private fun cleanFields() {
         cleanField(binding.etDocument)

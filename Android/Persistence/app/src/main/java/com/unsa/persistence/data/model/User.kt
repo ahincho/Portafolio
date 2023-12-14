@@ -2,7 +2,7 @@ package com.unsa.persistence.data.model
 
 import com.unsa.persistence.data.database.entities.UserEntity
 
-data class User (val name: String, val password: String) {
+data class User (val id: Int, val name: String, val password: String) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
@@ -18,4 +18,4 @@ data class User (val name: String, val password: String) {
     }
 }
 
-fun UserEntity.toDomain() = User(name, password)
+fun UserEntity.toDomain() = User(id, name, password)
