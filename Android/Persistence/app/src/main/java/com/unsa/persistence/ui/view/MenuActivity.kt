@@ -19,7 +19,7 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.btnView.setOnClickListener {
-            intent = Intent(this, ViewActivity::class.java)
+            intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
         }
     }

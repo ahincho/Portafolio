@@ -18,6 +18,9 @@ class ApplicationRepository @Inject constructor (
     fun insertApplicant(applicant: Applicant) {
         applicantDao.insertApplicant(applicant.toDatabase())
     }
+    fun deleteApplicant(id: Int) {
+        applicantDao.deleteApplicant(id)
+    }
     fun getAllUsers(): List<User> {
         return userDao.getAllUsers().map { it.toDomain() }
     }

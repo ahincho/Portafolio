@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="20dp"
     android:orientation="vertical"
-    tools:context=".ui.view.ViewActivity">
+    tools:context=".ui.view.ListActivity">
     <EditText
         android:id="@+id/etFilter"
         style="@style/Input"

@@ -16,7 +16,7 @@
             android:name=".ui.view.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.ViewActivity"
+            android:name=".ui.view.ListActivity"
             android:exported="false" />
         <activity
             android:name=".ui.view.AddActivity"
