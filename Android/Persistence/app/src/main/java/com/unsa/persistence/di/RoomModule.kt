@@ -17,7 +17,7 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideRoom(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, ApplicantsDatabase::class.java, APPLICATION_DATABASE).build()
+        Room.databaseBuilder(context, ApplicantsDatabase::class.java, APPLICATION_DATABASE).allowMainThreadQueries().build()
     @Singleton
     @Provides
     fun provideApplicantDao(database: ApplicantsDatabase) =

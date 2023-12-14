@@ -13,8 +13,6 @@ class RegisterViewModel @Inject constructor (
     private val insertUserUseCase: InsertUserUseCase
 ) : ViewModel() {
     fun insertUserInDatabase(user: User) {
-        viewModelScope.launch() {
-            insertUserUseCase.invoke(user)
-        }
+        insertUserUseCase.invoke(user)
     }
 }

@@ -13,10 +13,6 @@ class LoginViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase
 ) : ViewModel() {
     fun getSuccessfulLogin(user: User): Boolean {
-        var loginResult = false
-        viewModelScope.launch {
-           loginResult = loginUseCase.invoke(user)
-        }
-        return loginResult
+        return loginUseCase.invoke(user)
     }
 }

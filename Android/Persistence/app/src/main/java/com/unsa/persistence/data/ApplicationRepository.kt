@@ -12,16 +12,16 @@ class ApplicationRepository @Inject constructor (
     private val applicantDao: ApplicantDao,
     private val userDao: UserDao
 ) {
-    suspend fun getAllApplicants(): List<Applicant> {
+    fun getAllApplicants(): List<Applicant> {
         return applicantDao.getAllApplicants().map { it.toDomain() }
     }
-    suspend fun insertApplicant(applicant: Applicant) {
+    fun insertApplicant(applicant: Applicant) {
         applicantDao.insertApplicant(applicant.toDatabase())
     }
-    suspend fun getAllUsers(): List<User> {
+    fun getAllUsers(): List<User> {
         return userDao.getAllUsers().map { it.toDomain() }
     }
-    suspend fun insertUser(user: User) {
+    fun insertUser(user: User) {
         userDao.insertUser(user.toDatabase())
     }
 }
