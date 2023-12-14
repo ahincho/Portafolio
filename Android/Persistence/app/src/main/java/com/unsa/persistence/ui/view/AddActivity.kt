@@ -9,7 +9,9 @@ import androidx.activity.viewModels
 import com.unsa.persistence.data.model.Applicant
 import com.unsa.persistence.databinding.ActivityAddBinding
 import com.unsa.persistence.ui.viewmodel.AddViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddBinding
     private val addViewModel: AddViewModel by viewModels()

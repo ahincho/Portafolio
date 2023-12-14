@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.unsa.persistence.data.adapters.ApplicantAdapter
 import com.unsa.persistence.databinding.ActivityListBinding
 import com.unsa.persistence.ui.viewmodel.ListViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListBinding
     private val listViewModel: ListViewModel by viewModels()
