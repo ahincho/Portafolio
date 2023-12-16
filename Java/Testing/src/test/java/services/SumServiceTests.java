@@ -1,6 +1,6 @@
 package services;
 
-import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import services.implementation.SumServiceImpl;
 
@@ -10,6 +10,6 @@ public class SumServiceTests {
         int a = 2;
         int b = 2;
         SumService sumService = new SumServiceImpl();
-        Assert.assertEquals(sumService.sum(a, b), 4);
+        assertEquals(sumService.sum(a, b), 4);
     }
 }
