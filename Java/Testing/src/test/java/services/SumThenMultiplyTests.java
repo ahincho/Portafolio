@@ -19,4 +19,12 @@ public class SumThenMultiplyTests {
         sumThenMultiplyService.setSumService(sumService);
         assertEquals(sumThenMultiplyService.sumThenMultiply(2, 3, 2), 10);
     }
+    @Test
+    public void sumThenMultiplyMockitoTest() {
+        SumService sumServiceMockito = Mockito.mock(SumService.class);
+        Mockito.when(sumServiceMockito.sum(2, 3)).thenReturn(5);
+        SumThenMultiplyService sumThenMultiplyServiceMockito = new SumThenMultiplyServiceImpl();
+        sumThenMultiplyServiceMockito.setSumService(sumServiceMockito);
+        assertEquals(sumThenMultiplyServiceMockito.sumThenMultiply(2, 3, 2), 10);
+    }
 }
