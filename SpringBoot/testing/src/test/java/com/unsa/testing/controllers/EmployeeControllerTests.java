@@ -161,7 +161,7 @@ public class EmployeeControllerTests {
         ResultActions response = mockMvc.perform(put("/api/employee/{id}", employeeId)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(updatedEmployee)));
-        // Then: Check that fields were updated
+        // Then: Check that employee was not found
         response.andExpect(status().isNotFound())
                 .andDo(print());
     }
