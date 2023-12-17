@@ -36,7 +36,7 @@ public class EmployeeController {
                     savedEmployee.setName(employee.getName());
                     savedEmployee.setLastname(employee.getLastname());
                     savedEmployee.setEmail(employee.getEmail());
-                    Employee updatedEmployee = employeeService.saveEmployee(savedEmployee);
+                    Employee updatedEmployee = employeeService.updateEmployee(savedEmployee);
                     return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
                 }).orElseGet(() -> ResponseEntity.notFound().build());
     }
