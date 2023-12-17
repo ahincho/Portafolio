@@ -3,6 +3,7 @@ package com.unsa.testing.controllers;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.hamcrest.CoreMatchers.is;
+import static org.mockito.BDDMockito.willDoNothing;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -167,7 +168,20 @@ public class EmployeeControllerTests {
     }
     @Test
     @DisplayName("Delete Employee from Rest Controller")
-    void deleteEmployeeTest() {
-
+    void deleteEmployeeTest() throws Exception {
+        // Given: Saved employee on Database
+        long employeeId = 1L;
+        Employee employee = Employee.builder()
+                .name("Angel")
+                .lastname("Hincho")
+                .email("ahincho@unsa.edu.pe")
+                .build();
+        given(employeeService.getEmployeeById(employeeId)).willReturn(Optional.of(employee));
+        willDoNothing().given(employeeService).deleteEmployee(employeeId);
+        // When: Try to delete employee from rest controller
+        ResultActions response = mockMvc.perform(delete("/api/employee/{id}", employeeId));
+        // Then: Check that the employee was deleted
+        response.andExpect(status().isNotFound())
+                .andDo(print());
     }
 }
