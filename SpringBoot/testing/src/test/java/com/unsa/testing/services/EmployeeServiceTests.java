@@ -19,6 +19,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
@@ -61,5 +62,22 @@ public class EmployeeServiceTests {
         });
         // Then: Verify previous employee is already recorded on Database
         verify(employeeRepository, never()).save(any(Employee.class));
+    }
+    @Test
+    @DisplayName("Get All Employees using Service")
+    void getAllEmployeesTest() {
+        // Given: Employees recorded on Database
+        Employee employee1 = Employee.builder()
+                .id(2L)
+                .name("Eduardo")
+                .lastname("Jove")
+                .email("angelhincho@gmail.com")
+                .build();
+        given(employeeRepository.findAll()).willReturn(List.of(employee, employee1));
+        // When: List All Employees recorded on Database
+        List<Employee> employees = employeeService.getAllEmployees();
+        // Then: Check the employees recorded previously
+        assertThat(employees).isNotNull();
+        assertThat(employees.size()).isEqualTo(2);
     }
 }
