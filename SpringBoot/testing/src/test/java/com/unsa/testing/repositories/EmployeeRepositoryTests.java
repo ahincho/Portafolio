@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.List;
+import java.util.Optional;
 
 @DataJpaTest
 public class EmployeeRepositoryTests {
@@ -87,5 +88,15 @@ public class EmployeeRepositoryTests {
         assertThat(updatedEmployee.getName()).isEqualTo("Eduardo");
         assertThat(updatedEmployee.getLastname()).isEqualTo("Jove");
         assertThat(updatedEmployee.getEmail()).isEqualTo("angelhincho@gmail.com");
+    }
+    @Test
+    @DisplayName("Delete Employee on Database Test")
+    void deleteEmployeeTest() {
+        // Given: Employee saved on Database
+        employeeRepository.save(employee);
+        // When: Delete the employee from Database
+        employeeRepository.deleteById(employee.getId());
+        Optional<Employee> deletedEmployee = employeeRepository.findById(employee.getId());
+        assertThat(deletedEmployee).isEmpty();
     }
 }
