@@ -114,4 +114,19 @@ public class EmployeeServiceTests {
         // Then: Check and ask for recorded employee
         assertThat(savedEmployee).isNotNull();
     }
+    @Test
+    @DisplayName("Update Employee Test using Service")
+    void updateEmployeeTest() {
+        // Given: Recorded employee on Database
+        given(employeeRepository.save(employee)).willReturn(employee);
+        employee.setName("Angel Eduardo");
+        employee.setLastname("Hincho Jove");
+        employee.setEmail("angelhincho@unsa.edu.pe");
+        // When: Update the recorded data of the employee
+        Employee updatedEmployee = employeeService.updateEmployee(employee);
+        // Then: Check the fields after updating data
+        assertThat(updatedEmployee.getName()).isEqualTo("Angel Eduardo");
+        assertThat(updatedEmployee.getLastname()).isEqualTo("Hincho Jove");
+        assertThat(updatedEmployee.getEmail()).isEqualTo("angelhincho@unsa.edu.pe");
+    }
 }
