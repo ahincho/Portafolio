@@ -4,8 +4,8 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.verify;
+import static org.mockito.BDDMockito.willDoNothing;
+import static org.mockito.Mockito.*;
 
 import com.unsa.testing.application.services.EmployeeServiceImpl;
 import com.unsa.testing.domain.entities.Employee;
@@ -128,5 +128,16 @@ public class EmployeeServiceTests {
         assertThat(updatedEmployee.getName()).isEqualTo("Angel Eduardo");
         assertThat(updatedEmployee.getLastname()).isEqualTo("Hincho Jove");
         assertThat(updatedEmployee.getEmail()).isEqualTo("angelhincho@unsa.edu.pe");
+    }
+    @Test
+    @DisplayName("Delete Employee Test using Service")
+    void deleteEmployeeTest() {
+        // Given: No saved employees on Database
+        long employeeId = 1L;
+        willDoNothing().given(employeeRepository).deleteById(employeeId);
+        // When: Try to delete employee from Database
+        employeeService.deleteEmployee(employeeId);
+        // Then: Verify call to the delete by id operation
+        verify(employeeRepository, times(1)).deleteById(employeeId);
     }
 }
