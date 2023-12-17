@@ -19,6 +19,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -79,5 +80,22 @@ public class EmployeeServiceTests {
         // Then: Check the employees recorded previously
         assertThat(employees).isNotNull();
         assertThat(employees.size()).isEqualTo(2);
+    }
+    @Test
+    @DisplayName("Get Employees From Empty Database Test")
+    void getAllEmployeesFromEmptyDatabaseTest() {
+        // Given: Employee to record and empty Database
+        Employee employee1 = Employee.builder()
+                .id(2L)
+                .name("Eduardo")
+                .lastname("Jove")
+                .email("angelhincho@gmail.com")
+                .build();
+        given(employeeRepository.findAll()).willReturn(Collections.emptyList());
+        // When: Get all employees from Database then record new employee
+        List<Employee> employees = employeeService.getAllEmployees();
+        // Then: Check if the employees list is empty
+        assertThat(employees).isEmpty();
+        assertThat(employees.size()).isEqualTo(0);
     }
 }
