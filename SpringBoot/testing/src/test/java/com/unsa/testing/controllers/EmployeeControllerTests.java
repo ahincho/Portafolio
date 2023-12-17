@@ -139,4 +139,35 @@ public class EmployeeControllerTests {
                 .andExpect(jsonPath("$.lastname", is(updatedEmployee.getLastname())))
                 .andExpect(jsonPath("$.email", is(updatedEmployee.getEmail())));
     }
+    @Test
+    @DisplayName("Update No Register Employee from Rest Controller")
+    void updateNoRegisterEmployeeTest() throws Exception {
+        // Given: No saved employee on Database
+        long employeeId = 1L;
+        Employee employee = Employee.builder()
+                .name("Angel")
+                .lastname("Hincho")
+                .email("ahincho@unsa.edu.pe")
+                .build();
+        Employee updatedEmployee = Employee.builder()
+                .name("Eduardo")
+                .lastname("Jove")
+                .email("angelhincho@gmail.com")
+                .build();
+        given(employeeService.getEmployeeById(employeeId)).willReturn(Optional.empty());
+        given(employeeService.updateEmployee(any(Employee.class)))
+                .willAnswer(invocationOnMock -> invocationOnMock.getArgument(0));
+        // When: Try to update recorded employee from rest controller
+        ResultActions response = mockMvc.perform(put("/api/employee/{id}", employeeId)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(updatedEmployee)));
+        // Then: Check that fields were updated
+        response.andExpect(status().isNotFound())
+                .andDo(print());
+    }
+    @Test
+    @DisplayName("Delete Employee from Rest Controller")
+    void deleteEmployeeTest() {
+
+    }
 }
