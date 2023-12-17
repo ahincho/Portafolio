@@ -93,4 +93,21 @@ public class EmployeeControllerTests {
                 .andExpect(jsonPath("$.lastname", is(employee.getLastname())))
                 .andExpect(jsonPath("$.email", is(employee.getEmail())));
     }
+    @Test
+    @DisplayName("Get No Register Employee By Id from Rest Controller")
+    void getNoRegisterEmployeeTest() throws Exception {
+        // Given: Saved employee on Database
+        long employeeId = 1L;
+        Employee employee = Employee.builder()
+                .name("Angel")
+                .lastname("Hincho")
+                .email("ahincho@unsa.edu.pe")
+                .build();
+        given(employeeService.getEmployeeById(employeeId)).willReturn(Optional.empty());
+        // When: Look for the saved employee
+        ResultActions response = mockMvc.perform(get("/api/employee/{id}", employeeId));
+        // Then: Check fields of the saved or recover employee
+        response.andExpect(status().isNotFound())
+                .andDo(print());
+    }
 }
