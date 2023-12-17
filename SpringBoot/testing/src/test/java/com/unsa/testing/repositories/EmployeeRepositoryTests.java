@@ -61,4 +61,14 @@ public class EmployeeRepositoryTests {
         assertThat(employees).isNotNull();
         assertThat(employees.size()).isEqualTo(2);
     }
+    @Test
+    @DisplayName("Recover Employee by Id Test")
+    void findEmployeeByIdTest() {
+        // Given: Employee saved on Database
+        employeeRepository.save(employee);
+        // When: Recover employee from Database
+        Employee savedEmployee = employeeRepository.findById(employee.getId()).get();
+        // Then: Verify fields and id
+        assertThat(savedEmployee).isNotNull();
+    }
 }
