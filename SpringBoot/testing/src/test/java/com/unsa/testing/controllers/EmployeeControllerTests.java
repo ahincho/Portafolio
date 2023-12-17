@@ -22,6 +22,7 @@ import org.springframework.test.web.servlet.ResultActions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @WebMvcTest
 public class EmployeeControllerTests {
@@ -71,5 +72,25 @@ public class EmployeeControllerTests {
         response.andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(jsonPath("$.size()", is(employees.size())));
+    }
+    @Test
+    @DisplayName("Get Employee By Id from Rest Controller")
+    void getEmployeeById() throws Exception {
+        // Given: Saved employee on Database
+        long employeeId = 1L;
+        Employee employee = Employee.builder()
+                .name("Angel")
+                .lastname("Hincho")
+                .email("ahincho@unsa.edu.pe")
+                .build();
+        given(employeeService.getEmployeeById(employeeId)).willReturn(Optional.of(employee));
+        // When: Look for the saved employee
+        ResultActions response = mockMvc.perform(get("/api/employee/{id}", employeeId));
+        // Then: Check fields of the saved or recover employee
+        response.andExpect(status().isOk())
+                .andDo(print())
+                .andExpect(jsonPath("$.name", is(employee.getName())))
+                .andExpect(jsonPath("$.lastname", is(employee.getLastname())))
+                .andExpect(jsonPath("$.email", is(employee.getEmail())));
     }
 }
