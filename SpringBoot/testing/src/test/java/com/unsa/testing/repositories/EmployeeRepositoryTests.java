@@ -71,4 +71,21 @@ public class EmployeeRepositoryTests {
         // Then: Verify fields and id
         assertThat(savedEmployee).isNotNull();
     }
+    @Test
+    @DisplayName("Update Employee on Database Test")
+    void updateEmployeeTest() {
+        // Given: Employee saved on Database
+        employeeRepository.save(employee);
+        // When: Recover from Database then update fields
+        Employee savedEmployee = employeeRepository.findById(employee.getId()).get();
+        savedEmployee.setName("Eduardo");
+        savedEmployee.setLastname("Jove");
+        savedEmployee.setEmail("angelhincho@gmail.com");
+        Employee updatedEmployee = employeeRepository.save(savedEmployee);
+        // Then: Recover fields of the updated employee
+        assertThat(updatedEmployee.getId()).isEqualTo(savedEmployee.getId());
+        assertThat(updatedEmployee.getName()).isEqualTo("Eduardo");
+        assertThat(updatedEmployee.getLastname()).isEqualTo("Jove");
+        assertThat(updatedEmployee.getEmail()).isEqualTo("angelhincho@gmail.com");
+    }
 }
