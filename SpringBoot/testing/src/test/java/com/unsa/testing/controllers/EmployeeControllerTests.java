@@ -20,6 +20,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @WebMvcTest
 public class EmployeeControllerTests {
     @Autowired
@@ -51,5 +54,22 @@ public class EmployeeControllerTests {
                 .andExpect(jsonPath("$.name", is(employee.getName())))
                 .andExpect(jsonPath("$.lastname", is(employee.getLastname())))
                 .andExpect(jsonPath("$.email", is(employee.getEmail())));
+    }
+    @Test
+    @DisplayName("Get All Employees from Rest Controller")
+    void getAllEmployeesTest() throws Exception {
+        // Given: Some employees saved on Database
+        List<Employee> employees = new ArrayList<>();
+        employees.add(Employee.builder().name("Angel").lastname("Hincho").email("ahincho@unsa.edu.pe").build());
+        employees.add(Employee.builder().name("Eduardo").lastname("Jove").email("ahincho@gmail.com").build());
+        employees.add(Employee.builder().name("Fabiola").lastname("Tapara").email("ftapara@unsa.edu.pe").build());
+        employees.add(Employee.builder().name("Grissel").lastname("Quispe").email("ftapara@gmail.com").build());
+        given(employeeService.getAllEmployees()).willReturn(employees);
+        // When: Recover all employees from rest controller
+        ResultActions response = mockMvc.perform(get("/api/employee"));
+        // Then: Verify the list of employees
+        response.andExpect(status().isOk())
+                .andDo(print())
+                .andExpect(jsonPath("$.size()", is(employees.size())));
     }
 }
