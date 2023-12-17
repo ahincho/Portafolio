@@ -98,4 +98,20 @@ public class EmployeeServiceTests {
         assertThat(employees).isEmpty();
         assertThat(employees.size()).isEqualTo(0);
     }
+    @Test
+    @DisplayName("Get Employee By Id Test using Service")
+    void getEmployeeByIdTest() {
+        // Given: Recorded employee previously on Database
+        Employee recordedEmployee = Employee.builder()
+                .id(1L)
+                .name("Eduardo")
+                .lastname("Jove")
+                .email("angelhincho@gmail.com")
+                .build();
+        given(employeeRepository.findById(1L)).willReturn(Optional.of(recordedEmployee));
+        // When: Recover employee by id
+        Employee savedEmployee = employeeService.getEmployeeById(recordedEmployee.getId()).get();
+        // Then: Check and ask for recorded employee
+        assertThat(savedEmployee).isNotNull();
+    }
 }
