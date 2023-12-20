@@ -1,14 +1,16 @@
 package com.unsa.quotations.domain
 
+import com.unsa.quotations.data.QuoteRepository
 import com.unsa.quotations.data.model.QuoteModel
 import com.unsa.quotations.data.model.QuoteProvider
+import com.unsa.quotations.domain.model.Quote
 import javax.inject.Inject
 
 class GetRandomQuoteUseCase @Inject constructor (
-    private val quoteProvider: QuoteProvider
+    private val repository: QuoteRepository
 ) {
-    operator fun invoke(): QuoteModel? {
-        val quotes = quoteProvider.quotes
+    suspend operator fun invoke(): Quote? {
+        val quotes = repository.getAllQuotesFromDatabase()
         if (!quotes.isNullOrEmpty()) {
             val random = (quotes.indices).random()
             return quotes[random]

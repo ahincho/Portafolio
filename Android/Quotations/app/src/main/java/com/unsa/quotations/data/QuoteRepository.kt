@@ -1,6 +1,7 @@
 package com.unsa.quotations.data
 
 import com.unsa.quotations.data.database.daos.QuoteDao
+import com.unsa.quotations.data.database.entities.QuoteEntity
 import com.unsa.quotations.data.network.QuoteService
 import com.unsa.quotations.domain.model.Quote
 import com.unsa.quotations.domain.model.toDomain
@@ -17,5 +18,11 @@ class QuoteRepository @Inject constructor (
     suspend fun getAllQuotesFromDatabase(): List<Quote> {
         val response = quoteDao.getAllQuotes()
         return response.map { it.toDomain() }
+    }
+    suspend fun insertQuotes(quotes: List<QuoteEntity>) {
+        quoteDao.insertAll(quotes)
+    }
+    suspend fun clearQuotes() {
+        quoteDao.deleteAll()
     }
 }
