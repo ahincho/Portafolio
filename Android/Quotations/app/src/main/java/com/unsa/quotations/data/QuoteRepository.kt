@@ -1,17 +1,21 @@
 package com.unsa.quotations.data
 
-import com.unsa.quotations.data.model.QuoteModel
-import com.unsa.quotations.data.model.QuoteProvider
+import com.unsa.quotations.data.database.daos.QuoteDao
 import com.unsa.quotations.data.network.QuoteService
+import com.unsa.quotations.domain.model.Quote
+import com.unsa.quotations.domain.model.toDomain
 import javax.inject.Inject
 
 class QuoteRepository @Inject constructor (
     private val api: QuoteService,
-    private val quoteProvider: QuoteProvider
+    private val quoteDao: QuoteDao
 ) {
-    suspend fun getAllQuotes(): List<QuoteModel> {
+    suspend fun getAllQuotesFromApi(): List<Quote> {
         val response = api.getQuotes()
-        quoteProvider.quotes = response
-        return response
+        return response.map { it.toDomain() }
+    }
+    suspend fun getAllQuotesFromDatabase(): List<Quote> {
+        val response = quoteDao.getAllQuotes()
+        return response.map { it.toDomain() }
     }
 }
