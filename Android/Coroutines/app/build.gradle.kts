@@ -36,7 +36,7 @@ dependencies {
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     // Activity and View Model Dependencies
-    implementation("androidx.activity:activity-ktx:1.8.2")
+    implementation("androidx.activity:activity-ktx:1.7.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     // Retrofit Dependencies
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
