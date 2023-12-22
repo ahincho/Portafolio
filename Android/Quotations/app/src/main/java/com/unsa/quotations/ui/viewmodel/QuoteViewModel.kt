@@ -7,6 +7,7 @@ import com.unsa.quotations.domain.GetQuotesUseCase
 import com.unsa.quotations.domain.GetRandomQuoteUseCase
 import com.unsa.quotations.domain.model.Quote
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -18,7 +19,7 @@ class QuoteViewModel @Inject constructor (
     val quoteModel = MutableLiveData<Quote>()
     val isLoading = MutableLiveData<Boolean>()
     fun onCreate() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             isLoading.postValue(true)
             val result = getQuotesUseCase()
             if (!result.isNullOrEmpty()) {
@@ -28,7 +29,7 @@ class QuoteViewModel @Inject constructor (
         }
     }
     fun randomQuote() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             isLoading.postValue(true)
             val quote = getRandomQuoteUseCase()
             if (quote != null) {
