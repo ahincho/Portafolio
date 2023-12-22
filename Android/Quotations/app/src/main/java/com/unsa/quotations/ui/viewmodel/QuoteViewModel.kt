@@ -1,5 +1,6 @@
 package com.unsa.quotations.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,6 +9,7 @@ import com.unsa.quotations.domain.GetRandomQuoteUseCase
 import com.unsa.quotations.domain.model.Quote
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -25,6 +27,7 @@ class QuoteViewModel @Inject constructor (
             if (!result.isNullOrEmpty()) {
                 quoteModel.postValue(result[0])
                 isLoading.postValue(false)
+                Log.d("Coroutine","Coroutine Info: ${coroutineContext[Job]}")
             }
         }
     }
@@ -36,6 +39,7 @@ class QuoteViewModel @Inject constructor (
                 quoteModel.postValue(quote)
             }
             isLoading.postValue(false)
+            Log.d("Coroutine","Coroutine Info: ${coroutineContext[Job]}")
         }
     }
 }
