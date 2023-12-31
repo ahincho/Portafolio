@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.ahincho.retrofit"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.ahincho.retrofit"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -44,7 +44,7 @@ dependencies {
     // Picasso Dependency
     implementation("com.squareup.picasso:picasso:2.71828")
     // Retrofit Dependency
-    implementation("com.squareup.retrofit2:retrofit2:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     // Testing Dependencies
     testImplementation("junit:junit:4.13.2")
