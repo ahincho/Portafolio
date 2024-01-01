@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.ahincho.data.store"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.ahincho.data.store"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
